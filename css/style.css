@@ -267,16 +267,19 @@ img {
 }
 
 .agenda-step-label {
-  display: inline-block;
-  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: var(--color-accent);
   background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  margin-bottom: 0.6rem;
+  border: 2px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-radius: 50%;
+  margin-bottom: 0.75rem;
 }
 
 .agenda-step-content {
@@ -411,13 +414,17 @@ img {
 }
 
 .pillar-number {
-  display: inline-block;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--color-accent);
   background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
+  border: 2px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-radius: 50%;
   margin-bottom: 0.75rem;
 }
 
