@@ -1,9 +1,30 @@
 [
   {
-    "year": 2026,
-    "title": "Drawing Force Resonance: A 2-DOF Kinesthetic Feedback Sound Art System Using an XY Pen Plotter",
-    "authors": "Hiroaki Nakajima",
-    "venue": "In preparation",
+    "year": 2025,
+    "title": "人工複合音の音色と温冷覚との感覚間協応",
+    "authors": "中島武三志",
+    "venue": "日本感性工学会論文誌 Vol.24 No.4, pp.377-386",
+    "doi": null
+  },
+  {
+    "year": 2024,
+    "title": "五感から感性にはたらきかけるメディア表現",
+    "authors": "中島武三志",
+    "venue": "電波技術協会報 FORN No.359",
+    "doi": null
+  },
+  {
+    "year": 2023,
+    "title": "ハプソニック・アート：触感を伝えるサウンド・アート",
+    "authors": "中島武三志",
+    "venue": "日本バーチャルリアリティ学会論文誌 Vol.28 No.2, pp.71-79",
+    "doi": null
+  },
+  {
+    "year": 2020,
+    "title": "MR環境下での擬似接触音が触感錯覚に与える影響",
+    "authors": "中島武三志, 植井康介, 飯田隆太郎",
+    "venue": "日本バーチャルリアリティ学会論文誌 Vol.25 No.2, pp.127-137",
     "doi": null
   }
 ]
