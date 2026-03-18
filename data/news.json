@@ -8,15 +8,5 @@
     "tag": "news",
     "tag_label": "お知らせ",
     "tag_label_en": "News"
-  },
-  {
-    "date": "2026-03-16",
-    "title": "「描力共鳴」研究プロジェクトを開始",
-    "title_en": "Drawing Force Resonance project started",
-    "body": "ペンプロッターによる2次元力覚フィードバック・サウンドアートの研究を開始しました。",
-    "body_en": "Research on 2-DOF kinesthetic feedback sound art using an XY pen plotter has begun.",
-    "tag": "event",
-    "tag_label": "プロジェクト",
-    "tag_label_en": "Project"
   }
 ]
