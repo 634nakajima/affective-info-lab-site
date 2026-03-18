@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-03-18",
+    "title": "研究室紹介サイトを公開しました",
+    "title_en": "Lab website launched",
+    "body": "感性情報メディア研究室の紹介サイトを公開しました。",
+    "body_en": "The Affective Information Media Lab website is now live.",
+    "tag": "news",
+    "tag_label": "お知らせ",
+    "tag_label_en": "News"
+  },
+  {
+    "date": "2026-03-16",
+    "title": "「描力共鳴」研究プロジェクトを開始",
+    "title_en": "Drawing Force Resonance project started",
+    "body": "ペンプロッターによる2次元力覚フィードバック・サウンドアートの研究を開始しました。",
+    "body_en": "Research on 2-DOF kinesthetic feedback sound art using an XY pen plotter has begun.",
+    "tag": "event",
+    "tag_label": "プロジェクト",
+    "tag_label_en": "Project"
+  }
+]
