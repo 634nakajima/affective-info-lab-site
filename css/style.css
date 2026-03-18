@@ -219,6 +219,17 @@ img {
   margin-bottom: 2.5rem;
 }
 
+.subsection-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
 /* --- Fade-in Animation --- */
 .fade-in {
   opacity: 0;
@@ -348,6 +359,50 @@ img {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
   line-height: 1.65;
+}
+
+/* --- Workshop Card --- */
+.workshop-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.workshop-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+}
+
+.workshop-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.workshop-card .workshop-overview {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.workshop-card .workshop-steps {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  padding-left: 1.25rem;
+}
+
+.workshop-card .workshop-steps li {
+  margin-bottom: 0.4rem;
+}
+
+.workshop-card .workshop-steps ul {
+  padding-left: 1.25rem;
+  margin: 0.3rem 0;
+  list-style: disc;
 }
 
 /* --- Projects --- */
