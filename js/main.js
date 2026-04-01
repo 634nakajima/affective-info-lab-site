@@ -200,6 +200,17 @@
       });
   }
 
+  // --- Toggle Projects ---
+  document.querySelectorAll('.toggle-projects-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      var collapsed = target.classList.toggle('collapsed');
+      btn.classList.toggle('expanded', !collapsed);
+      btn.querySelector('.label').textContent = collapsed ? btn.dataset.labelShow : btn.dataset.labelHide;
+    });
+  });
+
   // --- Utility ---
   function escapeHtml(str) {
     if (!str) return '';

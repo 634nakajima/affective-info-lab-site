@@ -112,7 +112,20 @@
       <h2 class="section-title">Projects</h2>
       <p class="section-subtitle">Research projects</p>
 
-      <div class="projects-grid">
+      <div class="projects-grid collapsed" id="research-projects">
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="../assets/img/rikono-kagami.jpg" alt="Mirror of Egoism" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-body">
+            <h3>Mirror of Egoism</h3>
+            <p>An interactive art piece based on Akutagawa Ryunosuke's short story "The Nose." When standing before a monitor, an AI-generated nose image is overlaid on the viewer's own nose, growing larger in response to smiling — physically conveying the story's charm through embodied experience.</p>
+            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
+              Pillars: Enactive Affectivity
+            </p>
+          </div>
+        </div>
+
         <div class="project-card">
           <div class="project-thumb">
             <img src="../assets/img/fluid-interface.jpg" alt="Fluid Music Interface with Thermal Feedback" style="width:100%;height:100%;object-fit:cover;">
@@ -154,6 +167,9 @@
           </div>
         </div>
       </div>
+      <button class="toggle-projects-btn" data-target="research-projects" data-label-show="Show all projects" data-label-hide="Show less">
+        <span class="label">Show all projects</span><span class="arrow">▼</span>
+      </button>
 
       <h3 class="subsection-title">Seminar Exercises</h3>
 

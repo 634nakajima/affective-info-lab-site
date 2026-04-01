@@ -112,7 +112,20 @@
       <h2 class="section-title">プロジェクト</h2>
       <p class="section-subtitle">研究プロジェクト</p>
 
-      <div class="projects-grid">
+      <div class="projects-grid collapsed" id="research-projects">
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="assets/img/rikono-kagami.jpg" alt="利己の鏡" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-body">
+            <h3>利己の鏡</h3>
+            <p>芥川龍之介『鼻』を題材としたインタラクティブアート作品。モニターの前に立つと自分の鼻にAI生成の鼻画像が重ねられ、笑顔に応じて鼻が大きくなる体験を通じて、小説の魅力を身体的に伝達する。</p>
+            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
+              関連する柱：Enactive Affectivity
+            </p>
+          </div>
+        </div>
+
         <div class="project-card">
           <div class="project-thumb">
             <img src="assets/img/fluid-interface.jpg" alt="温冷覚フィードバック流体音楽インタフェース" style="width:100%;height:100%;object-fit:cover;">
@@ -154,6 +167,9 @@
           </div>
         </div>
       </div>
+      <button class="toggle-projects-btn" data-target="research-projects" data-label-show="すべてのプロジェクトを表示" data-label-hide="閉じる">
+        <span class="label">すべてのプロジェクトを表示</span><span class="arrow">▼</span>
+      </button>
 
       <h3 class="subsection-title">ゼミ演習</h3>
 
