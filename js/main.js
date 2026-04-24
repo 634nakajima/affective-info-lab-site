@@ -1,108 +1,152 @@
 /* ========================================
-   Affective Information Media Lab — Main JS
+   Affective Information Media Lab — Main JS (Amber Redesign)
    ======================================== */
 
 (function () {
   'use strict';
 
-  // --- Dark Mode ---
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-  const html = document.documentElement;
-
-  function getPreferredTheme() {
-    const stored = localStorage.getItem('theme');
-    if (stored) return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function applyTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-
-    // Swap logos
-    const logoSrc = theme === 'dark' ? 'assets/img/logo_dark.png' : 'assets/img/logo_light.png';
-    // Handle relative paths for /en/ page
-    const prefix = document.documentElement.lang === 'en' ? '../' : '';
-    const navLogo = document.getElementById('nav-logo');
-    const heroLogo = document.getElementById('hero-logo');
-    const footerLogo = document.getElementById('footer-logo');
-    if (navLogo) navLogo.src = prefix + logoSrc;
-    if (heroLogo) heroLogo.src = prefix + logoSrc;
-    if (footerLogo) footerLogo.src = prefix + logoSrc;
-  }
-
-  applyTheme(getPreferredTheme());
-
-  themeToggle.addEventListener('click', function () {
-    const current = html.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  });
-
   // --- Hamburger Menu ---
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', function () {
-    navLinks.classList.toggle('open');
-  });
-
-  // Close menu on link click
-  navLinks.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      navLinks.classList.remove('open');
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
     });
-  });
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+      });
+    });
+  }
 
   // --- Scroll Spy ---
-  const nav = document.getElementById('site-nav');
-  const sections = document.querySelectorAll('.section, .hero');
-  const navAnchors = navLinks.querySelectorAll('a[href^="#"]');
+  var nav = document.getElementById('site-nav');
+  var sections = document.querySelectorAll('.section, .hero');
+  var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
   function onScroll() {
-    // Nav shadow
-    if (window.scrollY > 10) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+    if (window.scrollY > 10) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
 
-    // Active section
-    let current = '';
+    var current = 'hero';
     sections.forEach(function (section) {
-      var top = section.offsetTop - 100;
-      if (window.scrollY >= top) {
-        current = section.getAttribute('id');
+      if (window.scrollY >= section.offsetTop - 90) {
+        current = section.id;
       }
     });
-
     navAnchors.forEach(function (a) {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === '#' + current) {
-        a.classList.add('active');
-      }
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // --- Intersection Observer (Fade-in) ---
-  var fadeEls = document.querySelectorAll('.fade-in');
+  // --- Fade-up (IntersectionObserver with stagger) ---
   if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
+    var fadeObs = new IntersectionObserver(function (entries) {
+      var idx = 0;
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          (function (el, delay) {
+            setTimeout(function () { el.classList.add('visible'); }, delay);
+          })(entry.target, idx * 80);
+          idx++;
+          fadeObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-
-    fadeEls.forEach(function (el) { observer.observe(el); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(function (el) {
+      fadeObs.observe(el);
+    });
   } else {
-    fadeEls.forEach(function (el) { el.classList.add('visible'); });
+    document.querySelectorAll('.fade-up').forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
+
+  // --- Typewriter (Hero) ---
+  var typewriterEl = document.getElementById('typewriter');
+  var cursorEl = document.getElementById('typewriter-cursor');
+  if (typewriterEl) {
+    var text = 'Practice-based Research';
+    var charIdx = 0;
+    setTimeout(function () {
+      var iv = setInterval(function () {
+        charIdx++;
+        typewriterEl.textContent = text.slice(0, charIdx);
+        if (charIdx >= text.length) clearInterval(iv);
+      }, 42);
+    }, 700);
+  }
+
+  // --- Terminal Animation (Hero right column) ---
+  var wordEl = document.getElementById('term-word');
+  var blockEl = document.getElementById('term-block');
+  var clockEl = document.getElementById('term-clock');
+  var sensorEls = document.querySelectorAll('.sensor-tag');
+
+  if (wordEl && clockEl) {
+    var words = ['MULTIMODAL', 'CROSSMODAL', 'ENACTIVE', 'HAPSONIC·ART', 'DIGITAL·KIN.', 'SOUND+TOUCH', 'AFFECT+SENSE'];
+    var frame = 0;
+
+    function updateClock() {
+      var d = new Date();
+      clockEl.textContent =
+        String(d.getHours()).padStart(2, '0') + ':' +
+        String(d.getMinutes()).padStart(2, '0') + ':' +
+        String(d.getSeconds()).padStart(2, '0');
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    setInterval(function () {
+      frame++;
+      var wordIdx = Math.floor(frame / 22) % words.length;
+      var charCount = Math.min(frame % 22, words[wordIdx].length);
+      var w = words[wordIdx];
+      wordEl.textContent = w.slice(0, charCount);
+      if (blockEl) {
+        blockEl.classList.toggle('hidden', charCount >= w.length);
+      }
+      var activeIdx = Math.floor(frame / 14) % sensorEls.length;
+      sensorEls.forEach(function (el, i) {
+        el.classList.toggle('active', i === activeIdx);
+      });
+    }, 110);
+  }
+
+  // --- Toggle Projects ---
+  var toggleBtn = document.getElementById('toggle-projects-btn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      var target = document.getElementById(toggleBtn.dataset.target);
+      if (!target) return;
+      var collapsed = target.classList.toggle('collapsed');
+      toggleBtn.textContent = collapsed
+        ? (toggleBtn.dataset.labelShow || 'すべて表示 ▼')
+        : (toggleBtn.dataset.labelHide || '閉じる ▲');
+    });
+  }
+
+  // --- Helper: observe newly added fade-up elements ---
+  function observeFadeUp(container) {
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        var idx = 0;
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            (function (el, delay) {
+              setTimeout(function () { el.classList.add('visible'); }, delay);
+            })(entry.target, idx * 80);
+            idx++;
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      container.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
+    } else {
+      container.querySelectorAll('.fade-up').forEach(function (el) { el.classList.add('visible'); });
+    }
   }
 
   // --- Load Publications ---
@@ -120,7 +164,6 @@
           return;
         }
 
-        // Group by year
         var byYear = {};
         data.forEach(function (pub) {
           var y = pub.year || 'Other';
@@ -132,16 +175,18 @@
         var html = '';
 
         years.forEach(function (year) {
-          html += '<div class="pub-year-group">';
+          html += '<div class="pub-year-group fade-up">';
           html += '<div class="pub-year">' + year + '</div>';
           html += '<ul class="pub-list">';
           byYear[year].forEach(function (pub) {
             html += '<li class="pub-item">';
             html += '<div class="pub-title">' + escapeHtml(pub.title) + '</div>';
-            html += '<div class="pub-authors">' + escapeHtml(pub.authors) + '</div>';
-            html += '<div class="pub-venue">' + escapeHtml(pub.venue) + '</div>';
+            html += '<div class="pub-authors">' + escapeHtml(pub.authors);
+            html += ' <span class="pub-venue">— ' + escapeHtml(pub.venue) + '</span></div>';
             if (pub.doi) {
-              html += '<div class="pub-doi"><a href="https://doi.org/' + encodeURI(pub.doi) + '" target="_blank" rel="noopener">DOI: ' + escapeHtml(pub.doi) + '</a></div>';
+              html += '<div><a href="https://doi.org/' + encodeURI(pub.doi) +
+                '" target="_blank" rel="noopener" style="font-size:0.78rem;color:var(--fg2)">DOI: ' +
+                escapeHtml(pub.doi) + '</a></div>';
             }
             html += '</li>';
           });
@@ -149,6 +194,7 @@
         });
 
         pubContainer.innerHTML = html;
+        observeFadeUp(pubContainer);
       })
       .catch(function () {
         pubContainer.innerHTML = '<div class="empty-state">' +
@@ -173,43 +219,31 @@
 
         var html = '<div class="news-timeline">';
         data.forEach(function (item) {
-          var tagClass = item.tag || 'news';
-          var tagLabel = isEnNews ? (item.tag_label_en || item.tag_label || item.tag || '') : (item.tag_label || item.tag || '');
+          var tagLabel = isEnNews
+            ? (item.tag_label_en || item.tag_label || item.tag || '')
+            : (item.tag_label || item.tag || '');
           var title = isEnNews ? (item.title_en || item.title) : item.title;
-          var body = isEnNews ? (item.body_en || item.body) : item.body;
-          html += '<div class="news-item">';
+          var body  = isEnNews ? (item.body_en  || item.body)  : item.body;
+          html += '<div class="news-item fade-up">';
           html += '<div class="news-date">' + escapeHtml(item.date) + '</div>';
           html += '<div class="news-content">';
           html += '<h3>' + escapeHtml(title);
           if (tagLabel) {
-            html += ' <span class="news-tag ' + escapeHtml(tagClass) + '">' + escapeHtml(tagLabel) + '</span>';
+            html += ' <span class="news-tag">' + escapeHtml(tagLabel) + '</span>';
           }
           html += '</h3>';
-          if (body) {
-            html += '<p>' + escapeHtml(body) + '</p>';
-          }
+          if (body) html += '<p>' + escapeHtml(body) + '</p>';
           html += '</div></div>';
         });
         html += '</div>';
-
         newsContainer.innerHTML = html;
+        observeFadeUp(newsContainer);
       })
       .catch(function () {
         newsContainer.innerHTML = '<div class="empty-state">' +
           (isEnNews ? 'Could not load news.' : 'ニュースの読み込みに失敗しました。') + '</div>';
       });
   }
-
-  // --- Toggle Projects ---
-  document.querySelectorAll('.toggle-projects-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var target = document.getElementById(btn.dataset.target);
-      if (!target) return;
-      var collapsed = target.classList.toggle('collapsed');
-      btn.classList.toggle('expanded', !collapsed);
-      btn.querySelector('.label').textContent = collapsed ? btn.dataset.labelShow : btn.dataset.labelHide;
-    });
-  });
 
   // --- Utility ---
   function escapeHtml(str) {
@@ -218,4 +252,5 @@
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
+
 })();

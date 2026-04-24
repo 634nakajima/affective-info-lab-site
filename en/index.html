@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   <nav class="site-nav" id="site-nav">
     <div class="nav-inner">
       <a href="#hero">
-        <img src="../assets/img/logo_light.png" alt="Lab Logo" class="nav-logo" id="nav-logo">
+        <img src="../assets/logo_full.png" alt="Affective Information Media Lab" class="nav-logo" onerror="this.src='../assets/img/logo_light.png'">
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
@@ -27,10 +27,7 @@
         <li><a href="#news">News</a></li>
       </ul>
       <div class="nav-controls">
-        <a href="../" class="btn-icon" title="日本語">JP</a>
-        <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle dark mode">
-          <span id="theme-icon">🌙</span>
-        </button>
+        <a href="../" class="btn-lang">JP</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -39,202 +36,249 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-inner fade-in">
+  <section class="hero pixel-bg" id="hero">
+    <div class="hero-radial hero-radial-l"></div>
+    <div class="hero-radial hero-radial-r"></div>
+    <div class="hero-inner">
+
+      <!-- Left column -->
       <div class="hero-content">
-        <img src="../assets/img/logo_light.png" alt="Affective Information Media Lab" class="hero-logo" id="hero-logo">
-        <h1>Affective Information Media Lab</h1>
-        <p>Crossmodal interaction, enactive emergence of affective experience, kinetic resonance, and the intersection of sound and touch.<br>Exploring how media can engage our affective senses, through practice-based research.</p>
-        <a href="#about" class="hero-cta">About Our Research →</a>
+        <img src="../assets/logo_mark.png" alt="AIML" class="hero-logo-mark" onerror="this.style.display='none'">
+        <div class="hero-tagline">
+          <span id="typewriter"></span><span class="cursor" id="typewriter-cursor">_</span>
+        </div>
+        <h1>Affective Information<br>Media Lab</h1>
+        <p>Crossmodal interaction, enactive emergence of affective experience, kinetic resonance, and the intersection of sound and touch. Exploring how media can engage our affective senses through practice-based research.</p>
+        <div class="hero-ctas">
+          <a href="#about" class="btn-primary">About Our Research →</a>
+          <a href="#projects" class="btn-outline">Projects →</a>
+        </div>
       </div>
-      <div class="hero-teaser">
+
+      <!-- Right column: teaser animation -->
+      <div class="hero-display">
         <iframe src="../assets/teaser.html" frameborder="0" scrolling="no" title="Lab Teaser"></iframe>
       </div>
+
     </div>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">About</h2>
+    <div class="section-inner">
 
-      <div class="research-agenda">
-        <div class="agenda-flow">
-          <div class="agenda-step">
-            <div class="agenda-step-label">Target</div>
-            <div class="agenda-step-content">Objects, people, environments, places, etc.</div>
-          </div>
-          <div class="agenda-step">
-            <div class="agenda-step-label">Affective Info</div>
-            <div class="agenda-step-content">Impressions, preferences, adjectives, onomatopoeia, etc.</div>
-          </div>
-          <div class="agenda-step">
-            <div class="agenda-step-label">Operation</div>
-            <div class="agenda-step-content">Measure / Compare / Amplify / Reduce / Adjust</div>
-          </div>
-          <div class="agenda-step">
-            <div class="agenda-step-label">Means</div>
-            <div class="agenda-step-content">Reproduce / Express through media &amp; content</div>
-          </div>
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">01</span>
+        <h2>About</h2>
+      </div>
+
+      <!-- Agenda flow -->
+      <div class="agenda-card fade-up">
+        <div class="agenda-step">
+          <span class="agenda-arrow-abs" aria-hidden="true">→</span>
+          <div class="agenda-label">Target</div>
+          <div class="agenda-desc">Objects, people, environments, places, etc.</div>
+        </div>
+        <div class="agenda-step">
+          <span class="agenda-arrow-abs" aria-hidden="true">→</span>
+          <div class="agenda-label">Affective Info</div>
+          <div class="agenda-desc">Impressions, preferences, adjectives, onomatopoeia, etc.</div>
+        </div>
+        <div class="agenda-step">
+          <span class="agenda-arrow-abs" aria-hidden="true">→</span>
+          <div class="agenda-label">Operation</div>
+          <div class="agenda-desc">Measure / Compare / Amplify / Adjust</div>
+        </div>
+        <div class="agenda-step">
+          <div class="agenda-label">Means</div>
+          <div class="agenda-desc">Media &amp; Content</div>
         </div>
       </div>
 
-      <p class="section-subtitle">Our research is organized around four pillars, explored through artistic practice</p>
+      <p class="section-subtitle fade-up">Our research is organized around four pillars, explored through artistic practice</p>
 
+      <!-- Pillars grid -->
       <div class="pillars-grid">
-        <div class="pillar-card">
-          <span class="pillar-number">01</span>
+        <div class="pillar-card p-card p1-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">01</div>
+          <div class="pillar-label">PILLAR 01</div>
           <h3>Multimodal / Crossmodal Affectivity</h3>
           <p>Expanding and transforming experience through sensory interactions. We explore what new affective experiences emerge when different sensory modalities intersect.</p>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-number">02</span>
+        <div class="pillar-card p-card p2-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">02</div>
+          <div class="pillar-label">PILLAR 02</div>
           <h3>Enactive Affectivity</h3>
-          <p>Exploration and emergence of sensory delight and reflective curiosity through action. We design spaces where the experiencer's active engagement triggers unexpected affective experiences.</p>
+          <p>Exploration and emergence of sensory delight through action. We design spaces where the experiencer's active engagement triggers unexpected affective experiences.</p>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-number">03</span>
+        <div class="pillar-card p-card p3-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">03</div>
+          <div class="pillar-label">PILLAR 03</div>
           <h3>Digital Kineticism</h3>
-          <p>Constructing fields where information and physical objects co-constitute through movement. Digital information manifests as physical motion, and physical motion generates information.</p>
+          <p>Constructing fields where information and physical objects co-constitute through movement. Digital information manifests as physical motion, and vice versa.</p>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-number">04</span>
+        <div class="pillar-card p-card p4-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">04</div>
+          <div class="pillar-label">PILLAR 04</div>
           <h3>Hapsonic Art</h3>
-          <p>Exploring the significance of touch in sound art. We investigate how various tactile submodalities — thermal, kinesthetic, and more — transform the acoustic experience.</p>
+          <p>Exploring the significance of touch in sound art. We investigate how tactile submodalities — thermal, kinesthetic, and more — transform the acoustic experience.</p>
         </div>
       </div>
 
-      <div class="approach-block">
-        <h3>Practice-based Research</h3>
-        <p>The creative process itself serves as a research method — through iterative cycles of conception, design, implementation, and experiential evaluation, we generate insights that theoretical inquiry alone cannot reach.</p>
+      <!-- PBR note -->
+      <div class="pbr-note fade-up">
+        <span class="pbr-prefix" aria-hidden="true">PBR//</span>
+        <div>
+          <h3>Practice-based Research</h3>
+          <p>The creative process itself serves as a research method — through iterative cycles of conception, design, implementation, and experiential evaluation, we generate insights that theoretical inquiry alone cannot reach.</p>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- Projects -->
-  <section class="section" id="projects" style="background: var(--color-bg-alt);">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">Projects</h2>
+  <section class="section section-alt" id="projects">
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">02</span>
+        <h2>Projects</h2>
+      </div>
       <p class="section-subtitle">Research projects</p>
 
       <div class="projects-grid collapsed" id="research-projects">
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="../assets/img/rikono-kagami.jpg" alt="Mirror of Egoism" style="width:100%;height:100%;object-fit:cover;">
+
+        <!-- Mirror of Egoism — Enactive (p2 blue) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p2">
+            <img src="../assets/img/rikono-kagami.jpg" alt="Mirror of Egoism" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p2">ENACTIVE</span>
           </div>
           <div class="project-body">
             <h3>Mirror of Egoism</h3>
-            <p>An interactive art piece based on Akutagawa Ryunosuke's short story "The Nose." When standing before a monitor, an AI-generated nose image is overlaid on the viewer's own nose, growing larger in response to smiling — physically conveying the story's charm through embodied experience.</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              Pillars: Enactive Affectivity
-            </p>
+            <p>An interactive art piece based on Akutagawa Ryunosuke's "The Nose." When standing before a monitor, an AI-generated nose is overlaid on the viewer's own, growing larger in response to smiling — physically conveying the story's essence through embodied experience.</p>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="../assets/img/fluid-interface.jpg" alt="Fluid Music Interface with Thermal Feedback" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div class="project-body">
-            <h3>Fluid Music Interface with Thermal Feedback</h3>
-            <p>A fluid-mediated music interface incorporating warm/cold sensory feedback, creating an experience where thermal sensation and sound are coupled.</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              Pillars: Multimodal/Crossmodal Affectivity, Hapsonic Art
-            </p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="../assets/img/marine.jpg" alt="Marine" style="width:100%;height:100%;object-fit:cover;">
+        <!-- Marine — Multimodal (p1 amber) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p1">
+            <img src="../assets/img/marine.jpg" alt="Marine" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p1">MULTIMODAL</span>
           </div>
           <div class="project-body">
             <h3>Marine</h3>
-            <p>A sound installation combining elastic materials and vibrotactile feedback. The work aims to evoke a sense of vitality through soft materials and an immersive underwater-like experience via multisensory integration of vision, audition, and touch.</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              Pillars: Multimodal/Crossmodal Affectivity, Enactive Affectivity, Hapsonic Art
-            </p>
+            <p>A sound installation combining elastic materials and vibrotactile feedback. The work aims to evoke a sense of vitality through soft materials and an immersive underwater-like experience via multisensory integration.</p>
             <a href="https://youtu.be/U345iavhEII" class="project-link" target="_blank" rel="noopener">YouTube →</a>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="../assets/img/heartbeater.jpg" alt="HeartBeater" style="width:100%;height:100%;object-fit:cover;">
+        <!-- Fluid Interface — Hapsonic (p3 green) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p3">
+            <img src="../assets/img/fluid-interface.jpg" alt="Fluid Music Interface with Thermal Feedback" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p3">HAPSONIC</span>
+          </div>
+          <div class="project-body">
+            <h3>Fluid Music Interface with Thermal Feedback</h3>
+            <p>A fluid-mediated music interface incorporating warm/cold sensory feedback, creating an experience where thermal sensation and sound are coupled in real time.</p>
+          </div>
+        </div>
+
+        <!-- HeartBeater — Multimodal (p4 pink) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p4">
+            <img src="../assets/img/heartbeater.jpg" alt="HeartBeater" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p4">MULTIMODAL</span>
           </div>
           <div class="project-body">
             <h3>HeartBeater</h3>
-            <p>A multimodal heartbeat presentation device that conveys a sense of another person's presence and mental state. Presents heartbeats through multiple sensory channels such as sound, vibration, and light.</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              Pillars: Multimodal/Crossmodal Affectivity
-            </p>
+            <p>A multimodal heartbeat presentation device that conveys a sense of another person's presence and mental state. Presents heartbeats through multiple sensory channels — sound, vibration, and light.</p>
             <a href="https://youtu.be/XWC-d0EUwBM" class="project-link" target="_blank" rel="noopener">YouTube →</a>
           </div>
         </div>
+
       </div>
-      <button class="toggle-projects-btn" data-target="research-projects" data-label-show="Show all projects" data-label-hide="Show less">
-        <span class="label">Show all projects</span><span class="arrow">▼</span>
+
+      <button class="toggle-projects-btn" id="toggle-projects-btn" data-target="research-projects" data-label-show="Show all ▼" data-label-hide="Show less ▲">
+        Show all ▼
       </button>
 
+      <!-- Seminar -->
       <h3 class="subsection-title">Seminar Exercises</h3>
+      <a href="https://www.634nakajima.com/affective-media-seminar/ja/" class="seminar-card p-card" target="_blank" rel="noopener">
+        <h4>Seminar Activity Guide</h4>
+        <p>Research &amp; Think, Create, Evaluate &amp; Compare, Communicate — materials for understanding and practicing the process of research-driven art creation.</p>
+      </a>
 
-      <div class="projects-grid">
-        <a href="https://www.634nakajima.com/affective-media-seminar/ja/" class="workshop-card" style="text-decoration: none; color: inherit; cursor: pointer;">
-          <h3>Seminar Activity Guide</h3>
-          <p class="workshop-overview">Research & Think, Create, Evaluate & Compare, Communicate — seminar materials for understanding and practicing the process of research-driven art creation.</p>
-        </a>
-      </div>
     </div>
   </section>
 
   <!-- Members -->
   <section class="section" id="members">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">Faculty</h2>
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">03</span>
+        <h2>Faculty</h2>
+      </div>
 
       <div class="members-grid">
-        <div class="member-card">
-          <div class="member-avatar"><img src="../assets/img/nakajima.jpg" alt="Musashi Nakajima"></div>
+        <div class="member-card p-card fade-up">
+          <div class="member-avatar">
+            <img src="../assets/img/nakajima.jpg" alt="Musashi Nakajima">
+          </div>
           <h3>Musashi Nakajima</h3>
           <p class="member-role">Faculty</p>
           <p class="member-interests">Multimodal Interaction, Crossmodality, Sound Art, Kinetic Art</p>
         </div>
-
       </div>
+
     </div>
   </section>
 
   <!-- Publications -->
-  <section class="section" id="publications" style="background: var(--color-bg-alt);">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">Publications</h2>
+  <section class="section section-alt" id="publications">
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">04</span>
+        <h2>Publications</h2>
+      </div>
       <p class="section-subtitle">Papers, presentations, and exhibitions</p>
       <div id="publications-container">
         <div class="empty-state">Loading...</div>
       </div>
+
     </div>
   </section>
 
   <!-- News -->
   <section class="section" id="news">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">News</h2>
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">05</span>
+        <h2>News</h2>
+      </div>
       <p class="section-subtitle">Announcements and events</p>
       <div id="news-container">
         <div class="empty-state">Loading...</div>
       </div>
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-about">
-        <img src="../assets/img/logo_light.png" alt="Lab Logo" style="height: 48px;" id="footer-logo">
-        <p>Affective Information Media Lab</p>
+      <div class="footer-brand">
+        <img src="../assets/logo_full.png" alt="Affective Information Media Lab" class="footer-logo" onerror="this.src='../assets/img/logo_light.png'">
+        <p>Affective Information Media Lab<br>Tokyo Polytechnic University</p>
       </div>
       <div>
-        <h4 class="footer-heading">Links</h4>
+        <h4 class="footer-heading">LINKS</h4>
         <ul class="footer-links">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -244,9 +288,9 @@
         </ul>
       </div>
       <div>
-        <h4 class="footer-heading">External</h4>
+        <h4 class="footer-heading">EXTERNAL</h4>
         <ul class="footer-links">
-          <li><a href="https://github.com/634nakajima" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/634nakajima" target="_blank" rel="noopener">GitHub →</a></li>
         </ul>
       </div>
     </div>

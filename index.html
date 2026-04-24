@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="light">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   <nav class="site-nav" id="site-nav">
     <div class="nav-inner">
       <a href="#hero">
-        <img src="assets/img/logo_light.png" alt="Lab Logo" class="nav-logo" id="nav-logo">
+        <img src="assets/logo_full.png" alt="感性情報メディア研究室" class="nav-logo" onerror="this.src='assets/img/logo_light.png'">
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">研究概要</a></li>
@@ -27,10 +27,7 @@
         <li><a href="#news">ニュース</a></li>
       </ul>
       <div class="nav-controls">
-        <a href="en/" class="btn-icon" title="English">EN</a>
-        <button class="btn-icon" id="theme-toggle" title="テーマ切替" aria-label="ダークモード切替">
-          <span id="theme-icon">🌙</span>
-        </button>
+        <a href="en/" class="btn-lang">EN</a>
         <button class="hamburger" id="hamburger" aria-label="メニュー">
           <span></span><span></span><span></span>
         </button>
@@ -39,202 +36,249 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-inner fade-in">
+  <section class="hero pixel-bg" id="hero">
+    <div class="hero-radial hero-radial-l"></div>
+    <div class="hero-radial hero-radial-r"></div>
+    <div class="hero-inner">
+
+      <!-- Left column -->
       <div class="hero-content">
-        <img src="assets/img/logo_light.png" alt="感性情報メディア研究室" class="hero-logo" id="hero-logo">
-        <h1>感性情報メディア研究室</h1>
-        <p>感覚間の相互作用、行為による感性体験の創発、動きの共鳴、そして音と触覚の交差。<br>Practice-based Researchを通じて、感性にはたらきかけるメディアのあり方を探究します。</p>
-        <a href="#about" class="hero-cta">研究について →</a>
+        <img src="assets/logo_mark.png" alt="AIML" class="hero-logo-mark" onerror="this.style.display='none'">
+        <div class="hero-tagline">
+          <span id="typewriter"></span><span class="cursor" id="typewriter-cursor">_</span>
+        </div>
+        <h1>感性情報メディア<br>研究室</h1>
+        <p>感覚間の相互作用、行為による感性体験の創発、動きの共鳴、そして音と触覚の交差。制作実践を通じて、感性にはたらきかけるメディアのあり方を探究します。</p>
+        <div class="hero-ctas">
+          <a href="#about" class="btn-primary">研究について →</a>
+          <a href="#projects" class="btn-outline">プロジェクト →</a>
+        </div>
       </div>
-      <div class="hero-teaser">
+
+      <!-- Right column: teaser animation -->
+      <div class="hero-display">
         <iframe src="assets/teaser.html" frameborder="0" scrolling="no" title="Lab Teaser"></iframe>
       </div>
+
     </div>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">研究概要</h2>
+    <div class="section-inner">
 
-      <div class="research-agenda">
-        <div class="agenda-flow">
-          <div class="agenda-step">
-            <div class="agenda-step-label">対象</div>
-            <div class="agenda-step-content">物事、人、環境、場所 等</div>
-          </div>
-          <div class="agenda-step">
-            <div class="agenda-step-label">感性情報</div>
-            <div class="agenda-step-content">印象、好み、形容詞、オノマトペ 等</div>
-          </div>
-          <div class="agenda-step">
-            <div class="agenda-step-label">操作</div>
-            <div class="agenda-step-content">計測 / 比較 / 増幅 / 軽減 / 調整</div>
-          </div>
-          <div class="agenda-step">
-            <div class="agenda-step-label">手段</div>
-            <div class="agenda-step-content">再現 / 表現するメディア・コンテンツ</div>
-          </div>
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">01</span>
+        <h2>研究概要</h2>
+      </div>
+
+      <!-- Agenda flow -->
+      <div class="agenda-card fade-up">
+        <div class="agenda-step">
+          <span class="agenda-arrow-abs" aria-hidden="true">→</span>
+          <div class="agenda-label">対象</div>
+          <div class="agenda-desc">物事、人、環境、場所 等</div>
+        </div>
+        <div class="agenda-step">
+          <span class="agenda-arrow-abs" aria-hidden="true">→</span>
+          <div class="agenda-label">感性情報</div>
+          <div class="agenda-desc">印象、好み、形容詞、オノマトペ 等</div>
+        </div>
+        <div class="agenda-step">
+          <span class="agenda-arrow-abs" aria-hidden="true">→</span>
+          <div class="agenda-label">操作</div>
+          <div class="agenda-desc">計測 / 比較 / 増幅 / 調整</div>
+        </div>
+        <div class="agenda-step">
+          <div class="agenda-label">手段</div>
+          <div class="agenda-desc">メディア・コンテンツ</div>
         </div>
       </div>
 
-      <p class="section-subtitle">4つの柱を軸に、作品制作という実践を通じて研究テーマを探求しています</p>
+      <p class="section-subtitle fade-up">4つの柱を軸に、作品制作という実践を通じて研究テーマを探求しています</p>
 
+      <!-- Pillars grid -->
       <div class="pillars-grid">
-        <div class="pillar-card">
-          <span class="pillar-number">01</span>
+        <div class="pillar-card p-card p1-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">01</div>
+          <div class="pillar-label">PILLAR 01</div>
           <h3>Multimodal / Crossmodal Affectivity</h3>
           <p>感覚間相互作用による体験の拡張・変容。異なる感覚モダリティが交差するとき、どのような新しい感性的体験が生まれるかを探ります。</p>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-number">02</span>
+        <div class="pillar-card p-card p2-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">02</div>
+          <div class="pillar-label">PILLAR 02</div>
           <h3>Enactive Affectivity</h3>
           <p>行為を通じた感覚的・内省的面白さの探索・創発。体験者自身の能動的な行為が、予想外の感性的体験を引き起こす場を設計します。</p>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-number">03</span>
+        <div class="pillar-card p-card p3-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">03</div>
+          <div class="pillar-label">PILLAR 03</div>
           <h3>Digital Kineticism</h3>
           <p>情報と実体が「動き」を媒介として共構成する場の構築。デジタルな情報が物理的な動きとして現れ、物理的な動きが情報を生み出します。</p>
         </div>
-        <div class="pillar-card">
-          <span class="pillar-number">04</span>
+        <div class="pillar-card p-card p4-card fade-up">
+          <div class="pillar-bg-num" aria-hidden="true">04</div>
+          <div class="pillar-label">PILLAR 04</div>
           <h3>Hapsonic Art</h3>
           <p>サウンドアートにおける触感の意義の探究と実践。温覚・力覚など触覚のさまざまなサブモダリティが音響体験をどう変容させるかを研究します。</p>
         </div>
       </div>
 
-      <div class="approach-block">
-        <h3>Practice-based Research</h3>
-        <p>制作プロセスそのものを研究方法として位置づけ、作品の構想・設計・実装・体験評価の反復を通じて、理論や論考だけでは到達できない知見を生み出すアプローチです。</p>
+      <!-- PBR note -->
+      <div class="pbr-note fade-up">
+        <span class="pbr-prefix" aria-hidden="true">PBR//</span>
+        <div>
+          <h3>Practice-based Research</h3>
+          <p>制作プロセスそのものを研究方法として位置づけ、作品の構想・設計・実装・体験評価の反復を通じて、理論や論考だけでは到達できない知見を生み出すアプローチです。</p>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- Projects -->
-  <section class="section" id="projects" style="background: var(--color-bg-alt);">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">プロジェクト</h2>
+  <section class="section section-alt" id="projects">
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">02</span>
+        <h2>プロジェクト</h2>
+      </div>
       <p class="section-subtitle">研究プロジェクト</p>
 
       <div class="projects-grid collapsed" id="research-projects">
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/img/rikono-kagami.jpg" alt="利己の鏡" style="width:100%;height:100%;object-fit:cover;">
+
+        <!-- 利己の鏡 — Enactive (p2 blue) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p2">
+            <img src="assets/img/rikono-kagami.jpg" alt="利己の鏡" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p2">ENACTIVE</span>
           </div>
           <div class="project-body">
             <h3>利己の鏡</h3>
             <p>芥川龍之介『鼻』を題材としたインタラクティブアート作品。モニターの前に立つと自分の鼻にAI生成の鼻画像が重ねられ、笑顔に応じて鼻が大きくなる体験を通じて、小説の魅力を身体的に伝達する。</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              関連する柱：Enactive Affectivity
-            </p>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/img/fluid-interface.jpg" alt="温冷覚フィードバック流体音楽インタフェース" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div class="project-body">
-            <h3>温冷覚フィードバック流体音楽インタフェース</h3>
-            <p>流体を媒介とした音楽インタフェースに温冷覚フィードバックを組み込み、触れた温度感覚と音響が連動する体験を実現するシステムの検討。</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              関連する柱：Multimodal/Crossmodal Affectivity, Hapsonic Art
-            </p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/img/marine.jpg" alt="真鈴 -Marine-" style="width:100%;height:100%;object-fit:cover;">
+        <!-- 真鈴 — Multimodal (p1 amber) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p1">
+            <img src="assets/img/marine.jpg" alt="真鈴 -Marine-" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p1">MULTIMODAL</span>
           </div>
           <div class="project-body">
             <h3>真鈴 -Marine-</h3>
-            <p>弾性素材と振動触覚フィードバックを組み合わせたサウンドインスタレーション。柔らかな素材が生み出す生命感と、視聴触覚の多感覚統合による水中のような没入体験を目指す作品。</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              関連する柱：Multimodal/Crossmodal Affectivity, Enactive Affectivity, Hapsonic Art
-            </p>
+            <p>弾性素材と振動触覚フィードバックを組み合わせたサウンドインスタレーション。柔らかな素材が生み出す生命感と多感覚統合による水中のような没入体験を目指す作品。</p>
             <a href="https://youtu.be/U345iavhEII" class="project-link" target="_blank" rel="noopener">YouTube →</a>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="assets/img/heartbeater.jpg" alt="HeartBeater" style="width:100%;height:100%;object-fit:cover;">
+        <!-- 温冷覚 — Hapsonic/Multimodal (p3 green) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p3">
+            <img src="assets/img/fluid-interface.jpg" alt="温冷覚フィードバック流体音楽インタフェース" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p3">HAPSONIC</span>
+          </div>
+          <div class="project-body">
+            <h3>温冷覚フィードバック流体音楽インタフェース</h3>
+            <p>流体を媒介とした音楽インタフェースに温冷覚フィードバックを組み込み、触れた温度感覚と音響が連動する体験を実現するシステムの検討。</p>
+          </div>
+        </div>
+
+        <!-- HeartBeater — Multimodal (p4 pink) -->
+        <div class="project-card p-card fade-up">
+          <div class="project-thumb proj-thumb-p4">
+            <img src="assets/img/heartbeater.jpg" alt="HeartBeater" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <span class="project-pillar-tag proj-tag-p4">MULTIMODAL</span>
           </div>
           <div class="project-body">
             <h3>HeartBeater</h3>
-            <p>他者の存在感や精神状態を示唆するマルチモーダル心音提示デバイス。心拍を音・振動・光などの複数の感覚チャネルで提示し、離れた相手の「いま、ここにいる」感覚を伝える。</p>
-            <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
-              関連する柱：Multimodal/Crossmodal Affectivity
-            </p>
+            <p>他者の存在感や精神状態を示唆するマルチモーダル心音提示デバイス。心拍を音・振動・光などの複数の感覚チャネルで提示し、離れた相手の「いま」を伝える。</p>
             <a href="https://youtu.be/XWC-d0EUwBM" class="project-link" target="_blank" rel="noopener">YouTube →</a>
           </div>
         </div>
+
       </div>
-      <button class="toggle-projects-btn" data-target="research-projects" data-label-show="すべてのプロジェクトを表示" data-label-hide="閉じる">
-        <span class="label">すべてのプロジェクトを表示</span><span class="arrow">▼</span>
+
+      <button class="toggle-projects-btn" id="toggle-projects-btn" data-target="research-projects" data-label-show="すべて表示 ▼" data-label-hide="閉じる ▲">
+        すべて表示 ▼
       </button>
 
+      <!-- Seminar -->
       <h3 class="subsection-title">ゼミ演習</h3>
+      <a href="https://www.634nakajima.com/affective-media-seminar/ja/" class="seminar-card p-card" target="_blank" rel="noopener">
+        <h4>ゼミ活動指針</h4>
+        <p>しらべる・かんがえる、つくる、はかる・くらべる・ほりさげる、つたえる ― 研究活動としての作品制作の流れを理解し、実践するための演習資料</p>
+      </a>
 
-      <div class="projects-grid">
-        <a href="https://www.634nakajima.com/affective-media-seminar/ja/" class="workshop-card" style="text-decoration: none; color: inherit; cursor: pointer;">
-          <h3>ゼミ活動指針</h3>
-          <p class="workshop-overview">しらべる・かんがえる、つくる、はかる・くらべる・ほりさげる、つたえる ― 研究活動としての作品制作の流れを理解し、実践するためのゼミ演習資料</p>
-        </a>
-      </div>
     </div>
   </section>
 
   <!-- Members -->
   <section class="section" id="members">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">担当教員</h2>
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">03</span>
+        <h2>担当教員</h2>
+      </div>
 
       <div class="members-grid">
-        <div class="member-card">
-          <div class="member-avatar"><img src="assets/img/nakajima.jpg" alt="中島 武三志"></div>
+        <div class="member-card p-card fade-up">
+          <div class="member-avatar">
+            <img src="assets/img/nakajima.jpg" alt="中島 武三志">
+          </div>
           <h3>中島 武三志</h3>
           <p class="member-role">教員</p>
           <p class="member-interests">Multimodal Interaction, Crossmodality, Sound Art, Kinetic Art</p>
         </div>
-
       </div>
+
     </div>
   </section>
 
   <!-- Publications -->
-  <section class="section" id="publications" style="background: var(--color-bg-alt);">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">業績</h2>
+  <section class="section section-alt" id="publications">
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">04</span>
+        <h2>業績</h2>
+      </div>
       <p class="section-subtitle">論文・発表・展示</p>
       <div id="publications-container">
         <div class="empty-state">読み込み中...</div>
       </div>
+
     </div>
   </section>
 
   <!-- News -->
   <section class="section" id="news">
-    <div class="section-inner fade-in">
-      <h2 class="section-title">ニュース</h2>
+    <div class="section-inner">
+
+      <div class="section-header fade-up">
+        <span class="section-num" aria-hidden="true">05</span>
+        <h2>ニュース</h2>
+      </div>
       <p class="section-subtitle">お知らせ・イベント</p>
       <div id="news-container">
         <div class="empty-state">読み込み中...</div>
       </div>
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-about">
-        <img src="assets/img/logo_light.png" alt="Lab Logo" style="height: 48px;" id="footer-logo">
-        <p>感性情報メディア研究室<br>Affective Information Media Lab</p>
+      <div class="footer-brand">
+        <img src="assets/logo_full.png" alt="感性情報メディア研究室" class="footer-logo" onerror="this.src='assets/img/logo_light.png'">
+        <p>感性情報メディア研究室<br>Affective Information Media Lab<br>東京工芸大学</p>
       </div>
       <div>
-        <h4 class="footer-heading">リンク</h4>
+        <h4 class="footer-heading">LINKS</h4>
         <ul class="footer-links">
           <li><a href="#about">研究概要</a></li>
           <li><a href="#projects">プロジェクト</a></li>
@@ -244,9 +288,9 @@
         </ul>
       </div>
       <div>
-        <h4 class="footer-heading">外部リンク</h4>
+        <h4 class="footer-heading">EXTERNAL</h4>
         <ul class="footer-links">
-          <li><a href="https://github.com/634nakajima" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/634nakajima" target="_blank" rel="noopener">GitHub →</a></li>
         </ul>
       </div>
     </div>
